@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <form id="loginForm">
+    <div class="imgcontainer">
+      <img src="images.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Usuário</b></label>
+      <input type="text" placeholder="Digite o nome de usuário" name="uname" id="uname" required>
+
+      <label for="psw"><b>Senha</b></label>
+      <input type="password" placeholder="Digite a senha" name="psw" id="psw" required>
+
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="lembre-me"> Lembrar de mim
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn">Cancelar</button>
+      <span class="psw">Esqueceu a <a href="#">senha?</a></span>
+    </div>
+  </form>
+
+  <script>
+     document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const usuarioCorreto = "admin";
+    const senhaCorreta = "1234";
+
+    const usuario = document.getElementById('uname').value;
+    const senha = document.getElementById('psw').value;
+
+    if (usuario === usuarioCorreto && senha === senhaCorreta) {
+      localStorage.setItem("logado", "true");
+      window.location.href = "cadastro.html";
+      
+    } else {
+      alert("❌ Usuário ou senha incorretos!");
+    }
+  });
+
+  document.querySelector(".cancelbtn").addEventListener("click", () => {
+    document.getElementById('uname').value = "";
+    document.getElementById('psw').value = "";
+  });
+  </script>
+</body>
+</html>

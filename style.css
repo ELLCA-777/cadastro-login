@@ -1,0 +1,142 @@
+import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Public Sans', sans-serif;
+  background-color: #f5f7fa;
+  color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+form,
+.form-container {
+  background-color: #fff;
+  border: 1px solid #d6d9dc;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 32px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 6px;
+}
+
+.form-header h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #555b6e;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+img.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid #003366;
+  object-fit: cover;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #212529;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='date'],
+input[type='number'] {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 1.8px solid #ced4da;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+}
+
+input:focus {
+  outline: none;
+  border-color: #003366;
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.2);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #003366;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+button:hover {
+  background-color: #00254a;
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button.cancelbtn {
+  background-color: #868e96;
+  margin-top: 10px;
+}
+
+button.cancelbtn:hover {
+  background-color: #6c757d;
+}
+
+@media (max-width: 480px) {
+  form,
+  .form-container {
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+
+  .form-header h1 {
+    font-size: 20px;
+  }
+
+  .form-header h2 {
+    font-size: 14px;
+  }
+}

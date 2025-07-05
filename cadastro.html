@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <form class="form-container" id="cadastroForm">
+    <div class="form-header">
+      <h1>Criar Acesso</h1>
+      <h2>Cadastre um novo usuário</h2>
+    </div>
+
+    <label for="novoUsuario">Usuário</label>
+    <input type="text" id="novoUsuario" name="novoUsuario" placeholder="Digite o usuário" required>
+
+    <label for="novaSenha">Senha</label>
+    <input type="password" id="novaSenha" name="novaSenha" placeholder="Digite a senha" required>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <script>
+    document.getElementById("cadastroForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const usuario = document.getElementById("novoUsuario").value.trim();
+      const senha = document.getElementById("novaSenha").value.trim();
+
+      if (usuario && senha) {
+        localStorage.setItem("usuarioCadastrado", usuario);
+        localStorage.setItem("senhaCadastrada", senha);
+        alert("✅ Cadastro realizado com sucesso!");
+        window.location.href = "dados.html";
+      } else {
+        alert("Por favor, preencha todos os campos.");
+      }
+    });
+  </script>
+
+</body>
+</html>
